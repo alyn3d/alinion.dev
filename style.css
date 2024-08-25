@@ -24,6 +24,12 @@
   --social-link-hover: rgba(0, 0, 0, 0.1);
 }
 
+.blackHole {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+
 body {
   background-image: var(--background-image-url);
   background-size: cover;
