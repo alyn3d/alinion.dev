@@ -66,6 +66,11 @@ body * {
   margin-top: 8px;
 }
 
+#profile sub {
+  z-index: 5;
+  position: relative;
+}
+
 #switch {
   position: relative;
   width: 64px;
