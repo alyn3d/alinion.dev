@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alin Ion — Senior Frontend Engineer</title>
+<meta name="description" content="Alin Ion — Senior Frontend Engineer. React, TypeScript, AI-assisted development.">
+<style>
+  :root{
+    --bg:#f7f7f8;
+    --surface:#ffffff;
+    --border:#e4e4e8;
+    --text:#1b1c20;
+    --text-dim:#53565e;
+    --text-faint:#86888f;
+    --accent:#3457d5;
+    --accent-soft:#eaedfc;
+    --radius:10px;
+    --max:800px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#121317;
+      --surface:#191a1f;
+      --border:#2b2d34;
+      --text:#edeef1;
+      --text-dim:#b2b4ba;
+      --text-faint:#797c85;
+      --accent:#7c93ff;
+      --accent-soft:#1d2440;
+    }
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--max);margin:0 auto;padding:56px 20px 80px;}
+  header.hero{margin-bottom:48px;}
+  h1{font-size:2rem;margin:0 0 6px;letter-spacing:-0.02em;}
+  .title{font-size:1.1rem;color:var(--accent);font-weight:600;margin:0 0 10px;}
+  .meta{color:var(--text-dim);font-size:0.95rem;margin:0 0 20px;}
+  .links{display:flex;flex-wrap:wrap;gap:10px;}
+  .links a{
+    color:var(--text);
+    text-decoration:none;
+    font-size:0.88rem;
+    padding:7px 13px;
+    border:1px solid var(--border);
+    border-radius:999px;
+    background:var(--surface);
+    transition:border-color .15s, color .15s;
+  }
+  .links a:hover{border-color:var(--accent);color:var(--accent);}
+  section{margin-bottom:44px;}
+  h2{
+    font-size:0.78rem;
+    text-transform:uppercase;
+    letter-spacing:.09em;
+    color:var(--text-faint);
+    margin:0 0 18px;
+    font-weight:700;
+  }
+  .about p{margin:0 0 14px;color:var(--text-dim);}
+  .about p:last-child{margin-bottom:0;}
+  .stack{color:var(--text);font-weight:600;}
+  .skills{display:flex;flex-wrap:wrap;gap:8px;}
+  .skills span{
+    font-size:0.82rem;
+    padding:5px 11px;
+    background:var(--accent-soft);
+    color:var(--accent);
+    border-radius:6px;
+    font-weight:600;
+  }
+  .job{
+    border:1px solid var(--border);
+    background:var(--surface);
+    border-radius:var(--radius);
+    padding:22px 24px;
+    margin-bottom:16px;
+  }
+  .job-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:6px 16px;
+    margin-bottom:4px;
+  }
+  .job-role{font-weight:700;font-size:1.02rem;}
+  .job-dates{font-size:0.82rem;color:var(--text-faint);white-space:nowrap;}
+  .job-company{color:var(--accent);font-weight:600;font-size:0.92rem;margin-bottom:12px;}
+  .job ul{margin:0;padding-left:20px;color:var(--text-dim);font-size:0.92rem;}
+  .job li{margin-bottom:7px;}
+  .job li:last-child{margin-bottom:0;}
+  .job li.ai{color:var(--text);}
+  .job li.ai::marker{color:var(--accent);}
+  .projects{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media (max-width:560px){.projects{grid-template-columns:1fr;}}
+  .proj{
+    border:1px solid var(--border);
+    background:var(--surface);
+    border-radius:var(--radius);
+    padding:18px 20px;
+  }
+  .proj h3{margin:0 0 6px;font-size:0.98rem;}
+  .proj h3 a{color:var(--text);text-decoration:none;}
+  .proj h3 a:hover{color:var(--accent);}
+  .proj p{margin:0 0 10px;color:var(--text-dim);font-size:0.87rem;}
+  .proj .tag{font-size:0.74rem;color:var(--text-faint);}
+  .earlier{
+    border:1px solid var(--border);
+    background:var(--surface);
+    border-radius:var(--radius);
+    padding:10px 24px;
+  }
+  .earlier-item{
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    padding:12px 0;
+    border-bottom:1px solid var(--border);
+    font-size:0.88rem;
+  }
+  .earlier-item:last-child{border-bottom:none;}
+  .earlier-role{color:var(--text);font-weight:600;}
+  .earlier-company{color:var(--text-dim);}
+  .earlier-dates{color:var(--text-faint);white-space:nowrap;text-align:right;}
+  footer{
+    text-align:center;
+    color:var(--text-faint);
+    font-size:0.82rem;
+    padding-top:20px;
+    border-top:1px solid var(--border);
+  }
+  footer a{color:var(--text-dim);}
+  @media print{
+    body{background:#fff;color:#000;}
+    .links a, .job, .proj, .earlier{border-color:#ccc;}
+    .skills span{background:#eee;color:#000;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>Alin Ion</h1>
+    <p class="title">Senior Frontend Engineer · React &amp; TypeScript</p>
+    <p class="meta">Bucharest, Romania — open to fully remote roles</p>
+    <nav class="links">
+      <a href="https://alinion.dev" target="_blank" rel="noopener">alinion.dev</a>
+      <a href="https://github.com/alyn3d" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://codeberg.org/alyn3d" target="_blank" rel="noopener">Codeberg</a>
+      <a href="https://www.linkedin.com/in/alyn3d/" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+  </header>
+
+  <section class="about">
+    <h2>About</h2>
+    <p>Senior Frontend Engineer with ~10 years building React/TypeScript products, currently at Grapefruit. I build AI into how I work — day-to-day development assisted by Claude, and AI-assisted prototyping on my personal projects.</p>
+    <p>Core stack: <span class="stack">React, TypeScript, Redux Toolkit, Node.js, SCSS</span></p>
+    <p>Outside work I ship things on my own: Tippy, a tip-calculator/bill-splitting app live on the Play Store with automatic currency conversion; a dark-mode browser extension for Chrome, Firefox and Edge; and a homelab (Proxmox, Docker) I use to self-host and experiment. Also a working photographer/videographer since 2011.</p>
+  </section>
+
+  <section class="skills-section">
+    <h2>Skills</h2>
+    <div class="skills">
+      <span>React.js</span>
+      <span>TypeScript</span>
+      <span>JavaScript</span>
+      <span>Redux Toolkit</span>
+      <span>React Native</span>
+      <span>Node.js</span>
+      <span>REST APIs</span>
+      <span>SCSS / CSS3</span>
+      <span>HTML5</span>
+      <span>Figma</span>
+      <span>Git</span>
+      <span>CI/CD (Jenkins)</span>
+      <span>Agile</span>
+      <span>Claude-assisted development</span>
+    </div>
+  </section>
+
+  <section class="experience">
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-role">Frontend Developer</span>
+        <span class="job-dates">Jun 2022 – Present</span>
+      </div>
+      <div class="job-company">Grapefruit · Remote</div>
+      <ul>
+        <li>Drove frontend development on a major loyalty platform from inception to launch, using React.js and TypeScript to build interfaces that integrate cleanly with backend systems.</li>
+        <li>Optimized state management with Redux Toolkit and the React Context system; built reusable, modular components for scalability and maintainability.</li>
+        <li>Streamlined deployment with Jenkins, Envoyer and Laravel Forge for faster, more reliable releases.</li>
+        <li>Translated Figma/Adobe XD designs into polished, pixel-accurate frontend implementations alongside designers and stakeholders.</li>
+        <li>Maintained version control and collaborated across a distributed team using Git and Bitbucket.</li>
+        <li class="ai">Integrated AI-assisted development into daily workflow, using Claude to accelerate implementation, debugging, and code review.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-role">Co-founder &amp; Full Stack Developer</span>
+        <span class="job-dates">Jun 2020 – May 2022</span>
+      </div>
+      <div class="job-company">Accolade Media SRL · Remote</div>
+      <ul>
+        <li>Set technology direction for the company — evaluated and adopted new tools, kept existing systems efficient.</li>
+        <li>Built user-facing features with React.js / React Native and scalable, reusable JavaScript.</li>
+        <li>Managed application state with Redux, including async API calls and derived/computed data.</li>
+        <li>Wrote backend services in Node.js with Sequelize ORM and MariaDB; owned both frontend and backend.</li>
+        <li>Used Git across Bitbucket and GitHub for version control and collaboration.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-role">Full-Stack Developer / UI-UX Designer</span>
+        <span class="job-dates">Oct 2016 – Jun 2020</span>
+      </div>
+      <div class="job-company">RBY Company LTD · Bucharest, Romania</div>
+      <ul>
+        <li>Built complex frontend systems with JavaScript/React.js and backend systems with Node.js and Sequelize ORM.</li>
+        <li>Took projects from requirements and user research through UI mockups, prototypes, and full-cycle development.</li>
+        <li>Designed UI elements and page flows, then implemented them — bridging design and engineering on the same projects.</li>
+        <li>Reviewed code and design across the team; recommended technologies for new features.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="projects-section">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="proj">
+        <h3><a href="https://play.google.com/store/apps/details?id=com.alyn3d.tippy" target="_blank" rel="noopener">Tippy — Tip &amp; Bill-Splitting App</a></h3>
+        <p>Designed, built, and shipped solo. A tip calculator and bill-splitting app with automatic currency conversion using live ECB exchange rates. Live on the Google Play Store.</p>
+        <span class="tag">React Native (Expo)</span>
+      </div>
+      <div class="proj">
+        <h3>Dark Mode News Extension</h3>
+        <p>A browser extension that forces dark mode on news sites that don't support it natively. Published to the Chrome, Firefox, and Edge extension stores.</p>
+        <span class="tag">JavaScript</span>
+      </div>
+      <div class="proj">
+        <h3>Build Kernel</h3>
+        <p>Started from the desire to build the Linux kernel automatically — a scripted, repeatable kernel build pipeline. (2015)</p>
+        <span class="tag">Shell / Linux</span>
+      </div>
+      <div class="proj">
+        <h3>Omega Tweaker</h3>
+        <p>A Windows XP registry-tweaking app bringing optimizations and working around common XP issues. Amassed 100,000+ downloads. (2005)</p>
+        <span class="tag">Visual Basic</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="earlier-section">
+    <h2>Earlier Experience</h2>
+    <div class="earlier">
+      <div class="earlier-item">
+        <span><span class="earlier-role">Web Developer</span> · <span class="earlier-company">DacWeb</span></span>
+        <span class="earlier-dates">Sep 2015 – Sep 2016</span>
+      </div>
+      <div class="earlier-item">
+        <span><span class="earlier-role">IT Manager</span> · <span class="earlier-company">New Education SRL</span></span>
+        <span class="earlier-dates">Oct 2014 – Aug 2015</span>
+      </div>
+      <div class="earlier-item">
+        <span><span class="earlier-role">Digital Specialist</span> · <span class="earlier-company">Scoala de Televiziune</span></span>
+        <span class="earlier-dates">Oct 2014 – Aug 2015</span>
+      </div>
+      <div class="earlier-item">
+        <span><span class="earlier-role">System Administrator</span> · <span class="earlier-company">Class IT Outsourcing</span></span>
+        <span class="earlier-dates">Jan 2014 – Aug 2014</span>
+      </div>
+      <div class="earlier-item">
+        <span><span class="earlier-role">Graphic Artist / System Administrator</span> · <span class="earlier-company">SC Weblex SRL</span></span>
+        <span class="earlier-dates">2013 – 2014</span>
+      </div>
+      <div class="earlier-item">
+        <span><span class="earlier-role">Photographer</span> · <span class="earlier-company">Kulturhaus Bukarest</span></span>
+        <span class="earlier-dates">Jan 2010 – Jan 2011</span>
+      </div>
+      <div class="earlier-item">
+        <span><span class="earlier-role">Freelance Photographer</span> · <span class="earlier-company">Self-employed</span></span>
+        <span class="earlier-dates">2011 – Present</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Alin Ion — <a href="https://alinion.dev">alinion.dev</a> · <a href="https://github.com/alyn3d">GitHub</a> · <a href="https://codeberg.org/alyn3d">Codeberg</a> · <a href="https://www.linkedin.com/in/alyn3d/">LinkedIn</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
