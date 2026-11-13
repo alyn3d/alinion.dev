@@ -142,10 +142,76 @@ ul li a:hover {
   border: 1px solid var(--text-color);
 }
 
+ul li a.fancy-button {
+  background: linear-gradient(135deg, #00d4ff 0%, #0099ff 50%, #6366ff 100%);
+  border: 2px solid rgba(0, 212, 255, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(0, 212, 255, 0.5), inset 0 0 20px rgba(99, 102, 255, 0.2);
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  padding: 0 !important;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+}
+
+.fancy-button-content {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  padding: 24px;
+  flex-shrink: 0;
+  margin-right: auto;
+}
+
+.fancy-button-bg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+ul li a.fancy-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #6366ff 0%, #0099ff 50%, #00d4ff 100%);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+ul li a.fancy-button:hover {
+  background: linear-gradient(135deg, #6366ff 0%, #0099ff 50%, #00d4ff 100%);
+  box-shadow: 0 12px 48px 0 rgba(0, 212, 255, 0.7), inset 0 0 30px rgba(99, 102, 255, 0.3);
+  border: 2px solid rgba(0, 212, 255, 0.8);
+  transform: translateY(-2px);
+}
+
+ul li a.fancy-button:hover::before {
+  left: 0;
+}
+
 ul li a ion-icon {
   margin-right: 8px;
   width: 22px;
   height: 22px;
+}
+
+ul li a.fancy-button-logo {
+  margin-right: 12px;
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: inline-block;
 }
 
 #socials {
